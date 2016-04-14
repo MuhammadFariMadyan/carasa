@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\Admin;
-use App\Models\Activity;
+use App\Models\Person;
 use Auth;
 use Validator;
 use Illuminate\Contracts\Auth\Guard;
@@ -35,12 +34,12 @@ class AuthController extends Controller
      */
 
 
-   protected $redirectPath = '/dashboard';
+   protected $redirectPath= '/dashboard';
 
 
-    public function __construct(Guard $auth, Admin $admin)
+    public function __construct(Guard $auth, Person $person)
     {   
-        $this->admin = $admin; 
+        $this->person = $person; 
         $this->auth = $auth;
         //$this->middleware('guest', ['except' => 'getLogout']);
     }
@@ -66,6 +65,14 @@ class AuthController extends Controller
      * @param  array  $data
      * @return User
      */
+
+   //public function getDashboard()
+    //{
+        //if(Auth::user()->role=='user')
+        //{
+        //    return view('master.adminpage');
+        //}
+    //}
     /**protected function create(array $data)
     {
         return User::create([
@@ -83,12 +90,6 @@ class AuthController extends Controller
         }
         return view('content.login');
     }
-
-    public function getDashboard()
-    {
-        $activity=Activity::all();
-        return view('master.adminpage', compact('activity'));
-    }
     
     public function postLogin(LoginRequest $request) {
        if($this->validate($request, [
@@ -99,7 +100,8 @@ class AuthController extends Controller
     
             if ($this->auth->attempt($credentials, $request->has('remember')))
             {
-                return redirect()->intended($this->redirectPath());
+                    return redirect()->intended($this->redirectPath());
+                
             }
             return redirect('/login')->withErrors([
             'username' => 'The username or the password is invalid. Please try again.',

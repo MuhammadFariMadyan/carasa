@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Carasa Admin | {{Auth::user()->username}}</title>
+  <title>Carasa User | {{Auth::user()->username}}</title>
 
   <!-- Bootstrap core CSS -->
 
@@ -386,13 +386,11 @@
                       </tr>
                      </thead>
                      <tbody>
-                      @foreach($activity as $log)
                       <tr>
-                        <td>{{$log['id']}}</td>
-                        <td>{{$log['action']}}</td>
-                        <td>{{$log['created_at']}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                       </tr>
-                      @endforeach
                       </tbody>
                     </table>
                   <div class="clearfix">

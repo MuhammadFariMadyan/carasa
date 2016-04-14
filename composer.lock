@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5c6026b96e6fa11a641b51a6ba976f5e",
-    "content-hash": "5bd58fd976f1ee3e9611bc37c006ec46",
+    "hash": "d76229a08b418b2484557a315422f578",
+    "content-hash": "6ab90010377a98e38ac9b92c93437610",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -950,6 +950,54 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "sarav/laravel-multiauth",
+            "version": "0.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sarav-S/Laravel-Multiauth.git",
+                "reference": "5f6daa76e3faa57c45e50dad3e07d6a216a4793c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sarav-S/Laravel-Multiauth/zipball/5f6daa76e3faa57c45e50dad3e07d6a216a4793c",
+                "reference": "5f6daa76e3faa57c45e50dad3e07d6a216a4793c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sarav\\Multiauth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sarav",
+                    "email": "me@sarav.co"
+                }
+            ],
+            "description": "A Simple Laravel Package for handling multiple authentication",
+            "keywords": [
+                "Authentication",
+                "auth",
+                "laravel",
+                "laravel 5",
+                "login",
+                "multi",
+                "multiauth",
+                "multiple",
+                "signin",
+                "user"
+            ],
+            "time": "2015-12-24 09:22:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

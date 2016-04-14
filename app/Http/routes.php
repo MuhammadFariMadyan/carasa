@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\PasswordController;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -30,7 +31,29 @@ Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/dashboard', [
 	'as'=>'dashboard',
-	'uses'=>'Auth\AuthController@getDashboard'
+	'uses'=>'PageController@getDashboard'
+	]);
+
+	Route::get('/editadmin/{id}',
+	function($id){
+		$num = new PageController();
+		return $num->editAdmin($id);
+	});
+	Route::post('/saveadmin/', [
+	'as'=>'saveadmin',
+	'uses'=>'PageController@saveAdmin'
+	]);
+	Route::get('/createadmin', [
+	'as'=>'createadmin',
+	'uses'=>'PageController@createAdmin'
+	]);
+	Route::post('/registeradmin/', [
+	'as'=>'registeradmin',
+	'uses'=>'PageController@registerAdmin'
+	]);
+	Route::get('/deleteadmin/{id}', [
+	'as'=>'deleteadmin',
+	'uses'=>'PageController@deleteAdmin'
 	]);
 });
 Route::get('password/email', 

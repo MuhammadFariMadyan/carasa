@@ -55,7 +55,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'ppl'),
+            'database'  => env('DB_DATABASE', 'carasa'),
             'username'  => env('DB_USERNAME', 'aiqx'),
             'password'  => env('DB_PASSWORD', 'vanadis4784'),
             'charset'   => 'utf8',
