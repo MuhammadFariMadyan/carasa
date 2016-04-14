@@ -34,7 +34,7 @@ class PageController extends Controller
     {
         $result= Person::where('username','=',$id)->first();
         $result->delete();
-        return view('admin.listadmin');
+        return redirect()->route('dashboard')->withErrors('An new admin has just been deleted!');
     }
     public function registerAdmin(Request $request)
     {
