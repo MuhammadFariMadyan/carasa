@@ -55,6 +55,33 @@ Route::group(['middleware' => 'auth'], function()
 	'as'=>'deleteadmin',
 	'uses'=>'PageController@deleteAdmin'
 	]);
+
+	Route::get('/dashboarduser', [
+	'as'=>'dashboarduser',
+	'uses'=>'PageController@getDashboard'
+	]);
+
+	Route::get('/edituser/{id}',
+	function($id){
+		$num = new PageController();
+		return $num->editAdmin($id);
+	});
+	Route::post('/saveuser/', [
+	'as'=>'saveuser',
+	'uses'=>'PageController@saveuser'
+	]);
+	Route::get('/createuser', [
+	'as'=>'createuser',
+	'uses'=>'PageController@createuser'
+	]);
+	Route::post('/registeruser/', [
+	'as'=>'registeruser',
+	'uses'=>'PageController@registeruser'
+	]);
+	Route::get('/deleteuser/{id}', [
+	'as'=>'deleteuser',
+	'uses'=>'PageController@deleteuser'
+	]);
 });
 Route::get('password/email', 
 [

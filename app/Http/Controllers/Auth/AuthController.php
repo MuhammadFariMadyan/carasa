@@ -86,7 +86,12 @@ class AuthController extends Controller
     {
         if(Auth::check())
         {
-            return redirect('/dashboard');
+            if(Auth::user()->role=='user'){
+                return redirect('/dashboarduser');
+            } else {
+                  return redirect('/dashboard');
+            }
+          
         }
         return view('content.login');
     }
@@ -100,8 +105,10 @@ class AuthController extends Controller
     
             if ($this->auth->attempt($credentials, $request->has('remember')))
             {
-                    return redirect()->intended($this->redirectPath());
-                
+                if($this->auth->user()->role=='admin')
+                {
+                    return redirect()->intended($this->redirectPath());  
+                }
             }
             return redirect('/login')->withErrors([
             'username' => 'The username or the password is invalid. Please try again.',

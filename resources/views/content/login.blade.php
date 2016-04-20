@@ -1,10 +1,10 @@
  @extends('master.admin')
  @section('content')
  <form action="{{route('postlogin')}}" method="POST">
-    {!! csrf_field() !!}
+       {!! csrf_field() !!}
       <div class="row">
         <div class="input-field col s6 push-s3">
-          <i class="small material-icons prefix">email</i>
+          <i class="small material-icons prefix">perm_identity</i>
           <input type = "text" name="username" class="validate" placeholder="Username">
         </div>
       </div>
