@@ -80,7 +80,7 @@
             <!-- top navigation -->
             <div class="top_nav">
 
-              @include('admin.navmenu')
+              @include('user.navmenu')
 
             </div>
             <!-- /top navigation -->
@@ -91,7 +91,7 @@
                     <div class="page-title">
                         <div class="title_left">
                             <h3>
-                    List Admin
+                    List User
                     <!-- <small>
                         Some examples to get you started
                     </small> -->
@@ -103,9 +103,9 @@
                                 <div class="input-group">
                                 <form action="{{URL::to('/searchadmin/')}}" method = "POST">
                                   {!! csrf_field() !!}
-                                    <input type="text" class="form-control" name="keyword" placeholder="Search admin by username...">
+                                    <input type="text" class="form-control" name="keyword" placeholder="Search User by username...">
                                     <span class="input-group-btn">
-                                     <button class="btn btn-default" type="Submit">Cari Admin</button>
+                                     <button class="btn btn-default" type="Submit">Cari User</button>
                                  </form>
                         </span>
                                 </div>
@@ -132,7 +132,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{route('createadmin')}}"><i class="fa fa-plus"></i></a>
+                                        <li><a href="{{route('createuser')}}"><i class="fa fa-plus"></i></a>
                                         </li>
                                     </ul>
                                     <div class="clearfix"></div>

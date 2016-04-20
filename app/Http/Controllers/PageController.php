@@ -14,13 +14,19 @@ class PageController extends Controller
         if(Auth::user()->role=='user')
         {
             $users = Person::where('role','=','user')->get();
-            return view('user.listuser', compact('users'));
+            return view('master.adminPage', compact('users'));
         }
         else
         {
         	$admins = Person::where('role','=','admin')->get();
-        	return view('master.adminpage', compact('admins'));
+        	return view('admin.listAdmin', compact('admins'));
         }
+    }
+
+    public function getDashboard1()
+    {
+        $users = Person::where('role','=','user')->get();
+        return view('user.listuser', compact('users'));
     }
     public function editAdmin($id)
     {

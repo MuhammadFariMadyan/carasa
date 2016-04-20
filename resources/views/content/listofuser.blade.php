@@ -25,9 +25,9 @@
                                                 <td>{{$user->username}}</td>
                                                 <td>{{$user->email}}</i>
                                                 </td>
-                                                <td class=" last"><a href="{{URL::to('/editadmin/'.$user->username)}}">Edit</a>
+                                                <td class=" last"><a href="{{URL::to('/edituser/'.$user->username)}}">Edit</a>
                                                 </td>
-                                                <td class=" last"><a href="{{URL::to('/deleteadmin/'.$user->username)}}">Delete</a>
+                                                <td class=" last"><a href="{{URL::to('/deleteuser/'.$user->username)}}">Delete</a>
                                                 </td>
                                             </tr>
                             

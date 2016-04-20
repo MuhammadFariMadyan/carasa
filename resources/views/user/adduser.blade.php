@@ -69,7 +69,7 @@
                     <br />
 
                     <!-- sidebar menu -->
-                    @include('admin.sidemenu')
+                    @include('user.sidemenu')
                     <!-- /sidebar menu -->
 
                     <!-- /menu footer buttons -->
@@ -80,7 +80,7 @@
             <!-- top navigation -->
             <div class="top_nav">
 
-              @include('admin.navmenu')
+              @include('user.navmenu')
 
             </div>
             <!-- /top navigation -->
@@ -91,7 +91,7 @@
                     <div class="page-title">
                         <div class="title_left">
                             <h3>
-                   Tambah Admin
+                   Tambah User
                     <!-- <small>
                         Some examples to get you started
                     </small> -->

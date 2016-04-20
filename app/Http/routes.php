@@ -58,13 +58,13 @@ Route::group(['middleware' => 'auth'], function()
 
 	Route::get('/dashboarduser', [
 	'as'=>'dashboarduser',
-	'uses'=>'PageController@getDashboard'
+	'uses'=>'PageController@getDashboard1'
 	]);
 
 	Route::get('/edituser/{id}',
 	function($id){
 		$num = new PageController();
-		return $num->editAdmin($id);
+		return $num->editUser($id);
 	});
 	Route::post('/saveuser/', [
 	'as'=>'saveuser',

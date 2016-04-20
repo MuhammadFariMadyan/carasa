@@ -84,7 +84,7 @@
                                         </li> -->
                                     </ul>
                                 </li>
-                                <li><a href="a_user.html"><i class="fa fa-user-md"></i> Management User <!-- <span class="fa fa-chevron-down"></span> --></a>
+                                <li><a href="{{route('dashboarduser')}}"><i class="fa fa-user-md"></i> Management User <!-- <span class="fa fa-chevron-down"></span> --></a>
                                     <!-- <ul class="nav child_menu" style="display: none">
                                         <li><a href="page_404.html">404 Error</a>
                                         </li>
