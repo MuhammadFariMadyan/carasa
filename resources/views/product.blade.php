@@ -63,7 +63,7 @@
         <li><h6>CATEGORY</h6></li>
         <li><a href="#!"><i class="fa fa-cutlery right"></i>Makanan</a></li>
         <li><a href="#!"><i class="fa fa-glass right"></i>Minuman</a></li>
-        <li><h6>{{ Auth::user()->username }}</h6></li>
+        <li><h6>{{ Auth::user()->nama }}</h6></li>
         <li><a href="#"><i class="fa fa-shopping-cart right"></i>Cart</a></li>
         <li><a href="#!">Order List<i class="fa fa-list-ol right"></i></a></li>
         <li >
@@ -170,7 +170,7 @@
           </div>
           <div class="card-content">
             <!-- Modal Trigger -->
-            <p>Rp. {{ $products->harga }}<a class="modal-trigger tooltipped" data-position="top" data-delay="50" data-tooltip="Add to Cart" href="#modal{{$products->product_id}}"><i class="material-icons right">shopping_cart</i></a></p>
+            <p>Rp. {{ $products -> harga }}<a class="modal-trigger tooltipped" data-position="top" data-delay="50" data-tooltip="Add to Cart" href="#modal{{ $products -> product_id}}"><i class="material-icons right">shopping_cart</i></a></p>
           </div>
         </div>
       </div>

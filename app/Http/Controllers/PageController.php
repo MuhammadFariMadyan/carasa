@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Auth;
 use Hash;
-use App\Models\Person;
+use App\Person;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
