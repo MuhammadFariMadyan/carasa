@@ -24,6 +24,21 @@ class ProductController extends Controller
         return view('product', compact('product'));        
     }
 
+    public function filterFood() 
+    {
+        $food = Product::where('id_kategori', '=', '1')->get();
+
+        return view('food', compact('food'));
+
+    }
+     public function filterDrink() 
+    {
+        $drink = Product::where('id_kategori', '=', '2')->get();
+
+        return view('drink', compact('drink'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

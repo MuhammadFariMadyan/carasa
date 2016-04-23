@@ -114,13 +114,13 @@
   </div>
 
   <!-- Modal Add to Cart Structure -->
-  @foreach ($product as $products)
-  <div id="modal{{$products->product_id}}" class="modal">
+  @foreach ($drink as $drinks)
+  <div id="modal{{$drinks->product_id}}" class="modal">
     <div class="modal-content">
-    <h4 class="red-text">{{$products -> nama}}</h4>
+    <h4 class="red-text">{{$drinks -> nama}}</h4>
 
     <div class="row">
-      <img class="col s6" src="{{$products->foto}}">
+      <img class="col s6" src="{{$drinks->foto}}">
       <form class="col s6">
         <div class="row">
           <div class="input-field">
@@ -138,7 +138,7 @@
       </form>
     </div>
     <p>Kategori : Makanan</p>
-    <p>Harga Satuan : Rp. {{$products->harga}},-</p>
+    <p>Harga Satuan : Rp. {{$drinks->harga}},-</p>
     </div>
 
     <div class="modal-footer">
@@ -161,16 +161,16 @@
         </div> <h6></h6>
 
     <div class='row'>
-     @foreach ($product as $products) 
+     @foreach ($drink as $drinks) 
       <div class="col s4">
         <div class="card">
           <div class="card-image">
-            <img src="{{ $products -> foto }}">
-            <span class="card-title">{{ $products -> nama}}</span>
+            <img src="{{ $drinks -> foto }}">
+            <span class="card-title">{{ $drinks -> nama}}</span>
           </div>
           <div class="card-content">
             <!-- Modal Trigger -->
-            <p>Rp. {{ $products -> harga }}<a class="modal-trigger tooltipped" data-position="top" data-delay="50" data-tooltip="Add to Cart" href="#modal{{ $products -> product_id}}"><i class="material-icons right">shopping_cart</i></a></p>
+            <p>Rp. {{ $drinks -> harga }}<a class="modal-trigger tooltipped" data-position="top" data-delay="50" data-tooltip="Add to Cart" href="#modal{{ $drinks -> product_id}}"><i class="material-icons right">shopping_cart</i></a></p>
           </div>
         </div>
       </div>

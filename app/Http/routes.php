@@ -44,6 +44,15 @@ Route::group(['middleware' => 'auth'], function()
 	     'uses'=>'ProductController@index'
 	]);
 
+	Route::get('/product/food', [
+	     'as'=>'food',
+	     'uses'=>'ProductController@filterFood'
+	]);
+	Route::get('/product/drink', [
+	     'as'=>'drink',
+	     'uses'=>'ProductController@filterDrink'
+	]);
+
 	Route::group(['middleware' => 'admin'], function(){
 		Route::get('/editadmin/{id}', function($id){
 			$num = new PageController();
