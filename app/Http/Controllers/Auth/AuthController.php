@@ -87,7 +87,7 @@ class AuthController extends Controller
         if(Auth::check())
         {
             if(Auth::user()->role=='user'){
-                return redirect('/dashboarduser');
+                return redirect('/dashboard');
             } else {
                   return redirect('/dashboard');
             }
