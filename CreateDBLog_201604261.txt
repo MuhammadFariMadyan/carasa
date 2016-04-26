@@ -1,0 +1,22 @@
+Generate a MySQL 5 database.
+Date/time: 2016-04-26 16:25
+Database created.
+Add tables
+Add table "Hospital"
+Table "Hospital" added.
+Add table "Kategori"
+Table "Kategori" added.
+Add table "Person"
+Table "Person" added.
+Add table "Product"
+Table "Product" added.
+Add table "Order"
+Table "Order" added.
+Add table "Cart"
+Table "Cart" added.
+Add foreign key constraints
+Constraint "Person.Hospital_Person" added.
+Constraint "Product.Kategori_Product" added.
+Constraint "Order.Person_Order" added.
+Constraint "Cart.Product_Cart" added.
+Constraint "Cart.Order_Cart" added.
