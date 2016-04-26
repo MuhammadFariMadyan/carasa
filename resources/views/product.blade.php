@@ -50,7 +50,7 @@
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">perm_identity</i>{{Auth::user()->nama}}<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
       <ul id="nav-mobile" class="teal lighten-3 side-nav">
-        <li><a href="#"><i class="material-icons left">dashboard</i>Home</a></li>
+        <li><a href="{{route('product')}}"><i class="material-icons left">dashboard</i>Home</a></li>
         <li>
           <form>
             <div class="input-field">
@@ -61,8 +61,8 @@
           </form>
         </li>
         <li><h6>CATEGORY</h6></li>
-        <li><a href="#!"><i class="fa fa-cutlery right"></i>Makanan</a></li>
-        <li><a href="#!"><i class="fa fa-glass right"></i>Minuman</a></li>
+        <li><a href="{{route('food')}}"><i class="fa fa-cutlery right"></i>Makanan</a></li>
+        <li><a href="{{route('drink')}}"><i class="fa fa-glass right"></i>Minuman</a></li>
         <li><h6>{{ Auth::user()->nama }}</h6></li>
         <li><a href="#"><i class="fa fa-shopping-cart right"></i>Cart</a></li>
         <li><a href="#!">Order List<i class="fa fa-list-ol right"></i></a></li>
@@ -155,9 +155,7 @@
     </div>
     <!-- Breadcrumbs Structure-->
         <div class="grey-text col s12">
-          <a href="#!"></i>Home</a>
-          <span>&nbsp>&nbsp</span>
-          <a href="#!">Makanan</a>
+          <a href="{{route('product')}}"></i>Home</a>
         </div> <h6></h6>
 
     <div class='row'>

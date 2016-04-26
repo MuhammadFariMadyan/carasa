@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Home</title>
+  <title>Product - drink</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -32,7 +32,7 @@
 
 <div class="navbar-fixed">
   <nav class="teal lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#!" class="brand-logo"><img class="responsive-img" src="img/carasaSmall.png"></a>
+    <div class="nav-wrapper container"><a id="logo-container" href="#!" class="brand-logo"><img class="responsive-img" src="../img/carasaSmall.png"></a>
       <ul class="right hide-on-med-and-down">
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Choose Category<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -50,7 +50,7 @@
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">perm_identity</i>{{Auth::user()->nama}}<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
       <ul id="nav-mobile" class="teal lighten-3 side-nav">
-        <li><a href="#"><i class="material-icons left">dashboard</i>Home</a></li>
+        <li><a href="{{route('product')}}"><i class="material-icons left">dashboard</i>Home</a></li>
         <li>
           <form>
             <div class="input-field">
@@ -61,8 +61,8 @@
           </form>
         </li>
         <li><h6>CATEGORY</h6></li>
-        <li><a href="#!"><i class="fa fa-cutlery right"></i>Makanan</a></li>
-        <li><a href="#!"><i class="fa fa-glass right"></i>Minuman</a></li>
+        <li><a href="{{route('food')}}"><i class="fa fa-cutlery right"></i>Makanan</a></li>
+        <li><a href="{{route('drink')}}"><i class="fa fa-glass right"></i>Minuman</a></li>
         <li><h6>{{ Auth::user()->nama }}</h6></li>
         <li><a href="#"><i class="fa fa-shopping-cart right"></i>Cart</a></li>
         <li><a href="#!">Order List<i class="fa fa-list-ol right"></i></a></li>
@@ -155,9 +155,9 @@
     </div>
     <!-- Breadcrumbs Structure-->
         <div class="grey-text col s12">
-          <a href="#!"></i>Home</a>
+          <a href="{{route('product')}}"></i>Home</a>
           <span>&nbsp>&nbsp</span>
-          <a href="#!">Makanan</a>
+          <a href="{{route('drink')}}">Minuman</a>
         </div> <h6></h6>
 
     <div class='row'>
@@ -225,8 +225,8 @@
     </footer>
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/init.js"></script>
   <script>
      $(document).ready(function(){
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered

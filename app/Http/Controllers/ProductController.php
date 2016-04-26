@@ -24,6 +24,11 @@ class ProductController extends Controller
         return view('product', compact('product'));        
     }
 
+    /**
+     * Display food category
+     * 
+     * @return $food
+     */
     public function filterFood() 
     {
         $food = Product::where('id_kategori', '=', '1')->get();
@@ -31,6 +36,12 @@ class ProductController extends Controller
         return view('food', compact('food'));
 
     }
+
+    /**
+     * Display drink category
+     * 
+     * @return $drink
+     */
      public function filterDrink() 
     {
         $drink = Product::where('id_kategori', '=', '2')->get();
