@@ -37,14 +37,37 @@ Route::group(['middleware' => 'auth'], function()
 	'uses'=>'PageController@getDashboard'
 	]);
 
+
+	Route::group(['middleware' => 'user'], function()
+ 	{
+ 		Route::get('/edituser/{id}',
+		function($id){
+			$num = new PageController();
+			return $num->editUser($id);
+		});
+
+		Route::post('/saveuser/', [
+			'as'=>'saveuser',
+			'uses'=>'PageController@saveuser'
+			]);
+		Route::post('/registeruser/', [
+			'as'=>'registeruser',
+			'uses'=>'PageController@registeruser'
+			]);
+	 	Route::post('/searchuser/', [
+	 		'as'=>'searchuser',
+	 		'uses'=>'PageController@searchUser'
+	 		]);
+ 	});
 	Route::group(['middleware' => 'admin'], function()
  	{
- 
-	 	Route::get('/editadmin/{id}', array('as'=>'editadmin',
+ 		Route::get('/editadmin/{id}', array('as'=>'editadmin',
 	 		function($id){
 			$num = new PageController();
 			return $num->editAdmin($id);
 		}));
+
+	 	
 	 	
 	 	Route::group(['middleware' => 'csrf'], function()
 	 	{
@@ -60,18 +83,7 @@ Route::group(['middleware' => 'auth'], function()
 	 		'as'=>'searchadmin',
 	 		'uses'=>'PageController@searchAdmin'
 	 		]);
-	 		Route::post('/saveuser/', [
-			'as'=>'saveuser',
-			'uses'=>'PageController@saveuser'
-			]);
-			Route::post('/registeruser/', [
-			'as'=>'registeruser',
-			'uses'=>'PageController@registeruser'
-			]);
-	 		Route::post('/searchuser/', [
-	 		'as'=>'searchuser',
-	 		'uses'=>'PageController@searchUser'
-	 		]);
+	 		
 		});
 		
 		Route::get('/createadmin', [
@@ -89,11 +101,7 @@ Route::group(['middleware' => 'auth'], function()
 		'uses'=>'PageController@getDashboard1'
 		]);
 
-		Route::get('/edituser/{id}',
-		function($id){
-			$num = new PageController();
-			return $num->editUser($id);
-		});
+	
 		
 		Route::get('/createuser', [
 		'as'=>'createuser',

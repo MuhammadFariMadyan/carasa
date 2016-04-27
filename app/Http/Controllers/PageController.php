@@ -30,11 +30,9 @@ class PageController extends Controller
     }
     public function editAdmin($id)
     {
-        if(Auth::user()->role=='admin')
-         {
+        
             $result= Person::where('username','=',$id)->first();
             return view('admin.editadmin', compact('result'));
-        }
     }
     public function createAdmin()
     {
@@ -177,11 +175,10 @@ class PageController extends Controller
 
      public function editUser($id)
     {
-        if(Auth::user()->role=='admin')
-         {
+        
              $result= Person::where('username','=',$id)->first();
              return view('user.edituser', compact('result'));
-         }
+         
     }
     public function createUser()
     {
