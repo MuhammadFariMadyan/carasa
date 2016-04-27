@@ -28,21 +28,25 @@ class PageController extends Controller
         $users = Person::where('role','=','user')->get();
         return view('user.listuser', compact('users'));
     }
+
     public function editAdmin($id)
     {
         $result= Person::where('username','=',$id)->first();
         return view('admin.editadmin', compact('result'));
     }
+
     public function createAdmin()
     {
         return view('admin.addadmin');
     }
+
     public function deleteAdmin($id)
     {
         $result= Person::where('username','=',$id)->first();
         $result->delete();
         return redirect()->route('dashboard')->withErrors('An new admin has just been deleted!');
     }
+
     public function registerAdmin(Request $request)
     {
             $newadmin = new Person;
@@ -59,6 +63,13 @@ class PageController extends Controller
             $newadmin->username=$admin_username;
             $newadmin->save();
             return redirect()->route('dashboard')->withErrors('An new admin has just been added!');
+    }
+
+    public function searchAdmin(Request $request)
+    {
+        $username=$request->get('keyword');
+        $admins = Person::where('username','like','%'.$username.'%')->where('role','=','admin')->get();
+        return view('admin.listadmin', compact('admins')); 
     }
 
     public function saveAdmin(Request $request)
@@ -99,10 +110,11 @@ class PageController extends Controller
     }
 
 
-        public function saveUser(Request $request)
-{
+    public function saveUser(Request $request)
+    {
         $keyword=$request->input('olduname');
         $user_username=$request->input('username');
+        
         if($keyword!=$user_username)
         {
             $olduser = Person::where('username','=',$keyword)->first();
@@ -136,21 +148,31 @@ class PageController extends Controller
         return redirect()->route('dashboard')->withErrors('An user profile has just been updated!');
     }
 
-     public function editUser($id)
+    public function editUser($id)
     {
         $result= Person::where('username','=',$id)->first();
         return view('user.edituser', compact('result'));
     }
+    
     public function createUser()
     {
         return view('user.adduser');
     }
+    
     public function deleteuser($id)
     {
         $result= Person::where('username','=',$id)->first();
         $result->delete();
         return redirect()->route('dashboard')->withErrors('An new user has just been deleted!');
-}
+    }
+
+    public function searchUser(Request $request)
+    {
+        $username=$request->get('keyword');
+        $users = Person::where('username','like','%'.$username.'%')->where('role','=','user')->get();
+        return view('user.listuser', compact('users')); 
+    }
+
     public function registerUser(Request $request)
     {
             $newuser = new Person;
