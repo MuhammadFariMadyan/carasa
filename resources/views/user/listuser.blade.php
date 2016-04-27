@@ -101,7 +101,7 @@
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                                 <div class="input-group">
-                                <form action="{{URL::to('/searchadmin/')}}" method = "POST">
+                                <form action="{{URL::to('/searchuser/')}}" method = "POST">
                                   {!! csrf_field() !!}
                                     <input type="text" class="form-control" name="keyword" placeholder="Search User by username...">
                                     <span class="input-group-btn">

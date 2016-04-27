@@ -21,7 +21,7 @@ class ProductTableSeeder extends Seeder
         		'foto' => $faker->imageUrl($width = 200, $height = 100),
         		'created_at' => $faker->dateTime($max = 'now'),
         		'updated_at' => $faker->dateTime($max = 'now'),
-        		'id_kategori' => '2'
+        		'id_kategori' => '1'
 
         	]);
         }
