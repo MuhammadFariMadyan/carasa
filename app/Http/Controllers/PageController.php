@@ -14,12 +14,12 @@ class PageController extends Controller
         if(Auth::user()->role=='user')
         {
             $users = Person::where('role','=','user')->get();
-            return view('master.adminPage', compact('users'));
+            return view('master.adminpage', compact('users'));
         }
         else
         {
             $admins = Person::where('role','=','admin')->get();
-            return view('admin.listAdmin', compact('admins'));
+            return view('admin.listadmin', compact('admins'));
         }
     }
 
