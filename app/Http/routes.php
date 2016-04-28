@@ -160,8 +160,20 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
  
  Route::post ('apicarasa/login/', 'ApiController@login');
  
+ Route::get('apicarasa/product', 
+ 	[
+ 		'as'=>'apiretrieveproduct',
+ 		'uses'=>'ApiController@retrieveProduct'
+ ]);
+
  Route::group(['middleware' => 'apiauth'], function()
  {
+ 	Route::get('apicarasa/product', 
+ 	[
+ 		'as'=>'apiretrieveproduct',
+ 		'uses'=>'ApiController@retrieveProduct'
+ 	]);
+
  	Route::get('apicarasa/retrieveadmin', 
  	[
  		'as'=>'apiretrieveadmin',

@@ -1,17 +1,20 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Dummy;
+use App\Models\DummyProduct;
 use App\Http\Controllers\Controller;
 use Validator;
 use Mail;
 use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Mail\MailServiceProvider;
+
 class ApiController extends Controller
 {
 	 const STATUS_OK = 200;
    const STATUS_ERROR = 422;
    const STATUS_NOT_FOUND = 404;
+
    	  public function login(Request $request){
        //messages
        $sm = "Login Succeed!"; 
@@ -38,7 +41,8 @@ class ApiController extends Controller
         //processing
        if ($validator->fails()){
            return response()->json(['message' => $fm], $fail);
-      }
+       }
+
        else
        {  
             $user  = Dummy::where('username', '=', $username)->where('password', '=', $password)->first(); 
@@ -56,6 +60,22 @@ class ApiController extends Controller
       $success = self::STATUS_OK;
       $admin = Dummy::where('role','=','admin')->get(array('username','nama','email'));
       return response()->json($admin, $success);
+   }
+
+   public function retrieveProduct()
+   {
+      $success = self::STATUS_OK;
+      $fail = self::STATUS_NOT_FOUND;
+      $product = DummyProduct::all();
+      $sm = "Product Retrieval Success!"; 
+      $fm = "Product Retrieval Failed!"; 
+
+      if(!is_null($product)){
+          return response()->json(['message' => $sm], $success);
+      }
+      else{
+          return response()->json(['message' => $fm], $fail);
+      }
    }
    public function searchAdmin(Request $request)
    {
