@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Carasa Admin | {{Auth::user()->username}}</title>
+    <title>Carasa Product | {{Auth::user()->username}}</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -38,9 +38,9 @@
 
 
 <body class="nav-md">
-                @if($errors->any())
+     @if($errors->any())
                 <div class="alert alert-danger" id="alert"><span class="glyphicon glyphicon-remove-sign">{{$errors->first()}}</span><span class ="glyphicon glyphicon-remove pull-right" id="closebutton"></span></div>
-                @endif
+    @endif
     <div class="container body">
 
 
@@ -69,7 +69,7 @@
                     <br />
 
                     <!-- sidebar menu -->
-                    @include('admin.sidemenu')
+                    @include('Product.sidemenu')
                     <!-- /sidebar menu -->
 
                     <!-- /menu footer buttons -->
@@ -80,7 +80,7 @@
             <!-- top navigation -->
             <div class="top_nav">
 
-              @include('admin.navmenu')
+              @include('product.navmenu')
 
             </div>
             <!-- /top navigation -->
@@ -91,7 +91,7 @@
                     <div class="page-title">
                         <div class="title_left">
                             <h3>
-                   Tambah Admin
+                   Edit Product
                     <!-- <small>
                         Some examples to get you started
                     </small> -->
@@ -105,7 +105,7 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
-                            @include('content.addingadmin')
+                            @include('content.editingproduct')
                             </div>
                         </div>
 
@@ -158,7 +158,7 @@
             <div id="notif-group" class="tabbed_notifications"></div>
         </div>
 
-           <script type="text/javascript">
+         <script type="text/javascript">
                     $(document).ready(function()
                     {
                         $('#closebutton').click(function()
@@ -167,7 +167,6 @@
                         });
                     });        
         </script>
-
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
         <!-- chart js -->

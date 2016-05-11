@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Carasa Admin | {{Auth::user()->username}}</title>
+    <title>Carasa Kategori | {{Auth::user()->username}}</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -69,7 +69,7 @@
                     <br />
 
                     <!-- sidebar menu -->
-                    @include('admin.sidemenu')
+                    @include('kategori.sidemenu')
                     <!-- /sidebar menu -->
 
                     <!-- /menu footer buttons -->
@@ -80,7 +80,7 @@
             <!-- top navigation -->
             <div class="top_nav">
 
-              @include('admin.navmenu')
+              @include('kategori.navmenu')
 
             </div>
             <!-- /top navigation -->
@@ -91,7 +91,7 @@
                     <div class="page-title">
                         <div class="title_left">
                             <h3>
-                    List Admin
+                    List Kategori
                     <!-- <small>
                         Some examples to get you started
                     </small> -->
@@ -101,11 +101,11 @@
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                                 <div class="input-group">
-                                <form action="{{URL::to('/searchadmin/')}}" method = "POST">
+                                <form action="{{URL::to('/searchkategori/')}}" method = "POST">
                                   {!! csrf_field() !!}
-                                    <input type="text" class="form-control" name="keyword" placeholder="Search admin by username...">
+                                    <input type="text" class="form-control" name="keyword" placeholder="Search Kategori...">
                                     <span class="input-group-btn">
-                                     <button class="btn btn-default" type="Submit">Cari Admin</button>
+                                     <button class="btn btn-default" type="Submit">Cari Kategori</button>
                                  </form>
                         </span>
                                 </div>
@@ -132,12 +132,12 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{route('createadmin')}}"><i class="fa fa-plus"></i></a>
+                                        <li><a href="{{route('createkategori')}}"><i class="fa fa-plus"></i></a>
                                         </li>
                                     </ul>
                                     <div class="clearfix"></div>
                                 </div>
-                            @include('content.listofadmin')
+                            @include('content.listofkategori')
                             </div>
                         </div>
 

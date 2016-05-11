@@ -20,7 +20,7 @@
                                     </ul> -->
                                 </li>
                                 
-                                <li><a href="a_produk.html"><i class="fa fa-th-list"></i> Produk <!-- <span class="fa fa-chevron-down"></span> --></a>
+                                <li><a href="{{route('dashboardproduct')}}"><i class="fa fa-th-list"></i> Produk <!-- <span class="fa fa-chevron-down"></span> --></a>
                                     <!-- <ul class="nav child_menu" style="display: none">
                                         <li><a href="general_elements.html">General Elements</a>
                                         </li>
@@ -42,7 +42,7 @@
                                         </li>
                                     </ul> -->
                                 </li>
-                                <li><a href="a_kategori.html"><i class="fa fa-table"></i> Kategori <!-- <span class="fa fa-chevron-down"></span> --></a>
+                                <li><a href="{{route('dashboardkategori')}}"><i class="fa fa-table"></i> Kategori <!-- <span class="fa fa-chevron-down"></span> --></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="tables.html">Tables</a>
                                         </li>
