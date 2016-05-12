@@ -112,13 +112,22 @@
       </button>
     </div>
   </div>
-
+  <br/>
+  <br/>
+  <form action="{{route('sortproduct')}}" method="POST">
+           {!! csrf_field() !!}
+    <select class="browser-default" name="sortselect">
+    <option value="nama">Nama</option>
+    <option value="harga">Harga</option>
+    </select>
+       <button type="submit" name="action">Sort
+        </button>
+  </form>
   <!-- Modal Add to Cart Structure -->
   @foreach ($product as $products)
   <div id="modal{{$products->product_id}}" class="modal">
     <div class="modal-content">
     <h4 class="red-text">{{$products -> nama}}</h4>
-
     <div class="row">
       <img class="col s6" src="{{$products->foto}}">
       <form class="col s6">
@@ -126,7 +135,7 @@
           <div class="input-field">
             <i class="material-icons prefix">mode_edit</i>
             <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-            <label for="icon_prefix2">Catatan</label>
+          <label for="icon_prefix2">Catatan</label>
           </div>
           <div>
             <p class="range-field">
