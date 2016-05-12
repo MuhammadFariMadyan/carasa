@@ -8,7 +8,7 @@ use App\Http\Requests;
 use Auth;
 use Hash;
 use App\Http\Controllers\Controller;
-use App\Product;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -71,6 +71,12 @@ class ProductController extends Controller
         //
     }
 
+    public function sort(Request $request)
+    {
+        $string =  $request->input('sortselect');
+        $product = Product::orderBy($string,'ASC')->get();
+        return view('product', compact('product'));   
+    }
     /**
      * Display the specified resource.
      *
