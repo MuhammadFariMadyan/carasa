@@ -388,15 +388,15 @@ public function searchProduct(Request $request)
             $nama_product=$request->input('nama');
 			
 			$harga_product=$request->input('harga');
-			//$kategori_product=$request->input('kategori');
-			$stock_product=$request->input('stock');
+			$kategori_product=$request->input('kategori');
+			//$stock_product=$request->input('stock');
 			$gambar_product=$request->input('foto');
 			
 			
             $newproduct->nama=$nama_product;
 			$newproduct->harga=$harga_product;
-			//$newproduct->id_kategori=$kategori_product;
-			$newproduct->stock=$stock_product;
+			$newproduct->id_kategori=$kategori_product;
+			//$newproduct->stock=$stock_product;
             $newproduct->foto=$gambar_product;
             
             

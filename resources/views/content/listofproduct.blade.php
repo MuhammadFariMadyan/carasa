@@ -26,6 +26,7 @@
                                                 <td>{{$product->nama}}</td>
 												<td>{{$product->harga}}</td>
 												<td>{{$product->nama}}</td>
+												
 												</i>
                                                 </td>
                                                 <td class=" last"><a href="{{URL::to('/editproduct/'.$product->nama)}}">Edit</a>
