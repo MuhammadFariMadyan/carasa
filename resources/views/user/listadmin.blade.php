@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Carasa Admin | {{Auth::user()->username}}</title>
+    <title>Carasa User | {{Auth::user()->username}}</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -101,11 +101,12 @@
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                                 <div class="input-group">
-                                <form action="{{URL::to('/searchadmin/')}}" method = "POST">
+                                <form action="{{URL::to('/searchuser/')}}" method = "POST">
                                   {!! csrf_field() !!}
-                                    <input type="text" class="form-control" name="keyword" placeholder="Search admin by username...">
+                                    <input type="text" class="form-control" name="keyword" placeholder="Search user by username...">
+                                      <input type="hidden" name="roleQuery" value="user"> 
                                     <span class="input-group-btn">
-                                     <button class="btn btn-default" type="Submit">Cari Admin</button>
+                                     <button class="btn btn-default" type="Submit">Cari User</button>
                                  </form>
                         </span>
                                 </div>

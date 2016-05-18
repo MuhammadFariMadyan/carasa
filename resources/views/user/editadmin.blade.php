@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Carasa Admin | {{Auth::user()->username}}</title>
+    <title>Carasa User | {{Auth::user()->username}}</title>
 
     <!-- Bootstrap core CSS -->
 

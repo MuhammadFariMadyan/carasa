@@ -34,6 +34,13 @@ Route::get('/logout', [
 	'uses'=>'Auth\AuthController@getLogout'
 ]);
 
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
 Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/dashboard', [
@@ -61,11 +68,6 @@ Route::group(['middleware' => 'auth'], function()
 		'uses'=>'ProductController@sort'
 	]);
 
-	Route::post('/searchproduct', [
-		'as'=>'searchproduct',
-		'uses'=>'ProductController@search'
-	]);
-
 	Route::group(['middleware' => 'admin'], function()
  	{
  
@@ -89,7 +91,7 @@ Route::group(['middleware' => 'auth'], function()
 
 	 		Route::post('/searchadmin/', [
 		 		'as'=>'searchadmin',
-		 		'uses'=>'PageController@searchAdmin'
+		 		'uses'=>'PageController@personSearch'
 	 		]);
 
 	 		Route::post('/saveuser/', [
@@ -104,7 +106,7 @@ Route::group(['middleware' => 'auth'], function()
 
 	 		Route::post('/searchuser/', [
 		 		'as'=>'searchuser',
-		 		'uses'=>'PageController@searchUser'
+		 		'uses'=>'PageController@personSearch'
 	 		]);
 		});
 		

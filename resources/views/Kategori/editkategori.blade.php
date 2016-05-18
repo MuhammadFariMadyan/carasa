@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Carasa Admin | {{Auth::user()->username}}</title>
+    <title>Carasa Kategori | {{Auth::user()->username}}</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -38,9 +38,9 @@
 
 
 <body class="nav-md">
-            @if($errors->any())
-                <div class="alert alert-success" id="alert"><span class="glyphicon glyphicon-ok-sign">{{$errors->first()}}</span><span class ="glyphicon glyphicon-remove pull-right" id="closebutton"></span></div>
-                @endif
+     @if($errors->any())
+                <div class="alert alert-danger" id="alert"><span class="glyphicon glyphicon-remove-sign">{{$errors->first()}}</span><span class ="glyphicon glyphicon-remove pull-right" id="closebutton"></span></div>
+    @endif
     <div class="container body">
 
 
@@ -69,7 +69,7 @@
                     <br />
 
                     <!-- sidebar menu -->
-                    @include('admin.sidemenu')
+                    @include('kategori.sidemenu')
                     <!-- /sidebar menu -->
 
                     <!-- /menu footer buttons -->
@@ -80,7 +80,7 @@
             <!-- top navigation -->
             <div class="top_nav">
 
-              @include('admin.navmenu')
+              @include('kategori.navmenu')
 
             </div>
             <!-- /top navigation -->
@@ -91,27 +91,13 @@
                     <div class="page-title">
                         <div class="title_left">
                             <h3>
-                    List Admin
+                   Edit Kategori
                     <!-- <small>
                         Some examples to get you started
                     </small> -->
                             </h3>
                         </div>
 
-                        <div class="title_right">
-                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                                <div class="input-group">
-                                <form action="{{URL::to('/searchadmin/')}}" method = "POST">
-                                  {!! csrf_field() !!}
-                                    <input type="text" class="form-control" name="keyword" placeholder="Search admin by username...">
-                                     <input type="hidden" name="roleQuery" value="admin"> 
-                                    <span class="input-group-btn">
-                                     <button class="btn btn-default" type="Submit">Cari Admin</button>
-                                 </form>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="clearfix"></div>
 
@@ -119,26 +105,7 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
-                                <div class="x_title">
-                                    <!-- <h2>Daily active users <small>Sessions</small></h2> -->
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a href="#"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Settings 1</a>
-                                                </li>
-                                                <li><a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{route('createadmin')}}"><i class="fa fa-plus"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                            @include('content.listofadmin')
+                            @include('content.editingkategori')
                             </div>
                         </div>
 
@@ -148,6 +115,25 @@
 
                     </div>
                 </div>
+                <!--modal-content -->
+                    <div class="modal fade" tabindex="-1" role="dialog" id="asking">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Konfirmasi delete</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>Apakah anda yakin ingin mengahpus data tersebut?&hellip;</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" class="close" data-dismiss="modal">Ya</button>
+                            <button type="button" class="btn btn-primary" class="close" data-dismiss="modal">Cancel</button>
+                          </div>
+                        </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                    </div>
+                <!-- /.modal -->
                     <!-- footer content -->
                 <footer>
                     <div class="">
@@ -181,7 +167,6 @@
                         });
                     });        
         </script>
-
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
         <!-- chart js -->
