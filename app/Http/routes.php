@@ -61,6 +61,11 @@ Route::group(['middleware' => 'auth'], function()
 		'uses'=>'ProductController@sort'
 	]);
 
+	Route::post('/searchproduct', [
+		'as'=>'searchproduct',
+		'uses'=>'ProductController@search'
+	]);
+
 	Route::group(['middleware' => 'admin'], function()
  	{
  
