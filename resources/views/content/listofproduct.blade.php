@@ -29,9 +29,9 @@
 												
 												</i>
                                                 </td>
-                                                <td class=" last"><a href="{{URL::to('/editproduct/'.$product->nama)}}">Edit</a>
+                                                <td class=" last"><a href="{{URL::to('/editproduct/'.$product->product_id)}}">Edit</a>
                                                 </td>
-                                                <td class=" last"><a href="{{URL::to('/deleteproduct/'.$product->nama)}}">Delete</a>
+                                                <td class=" last"><a href="{{URL::to('/deleteproduct/'.$product->product_id)}}">Delete</a>
                                                 </td>
                                             </tr>
                             

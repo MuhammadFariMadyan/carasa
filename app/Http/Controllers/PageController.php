@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Hash;
 use App\Models\Person;
+use App\Models\Kategori;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -20,6 +21,18 @@ class PageController extends Controller
     {
         $users = Person::where('role','=','user')->get();
         return view('user.listuser', compact('users'));
+    }
+
+    public function getDashboard2()
+    {
+        $kategories = Kategori::where('id_kategori','>',0)->get();
+        return view('kategori.listkategori', compact('kategories'));
+    }
+    
+    public function getDashboard3()
+    {
+        $products = Product::where('product_id','>',0)->get();
+        return view('product.listproduct', compact('products'));
     }
     //returns edit adminpage with pre-filled parameters
     public function editAdmin($id)
@@ -58,7 +71,7 @@ class PageController extends Controller
     
     }
     //check admin email
-    public function adminEmailChecker(String $request)
+   public function adminEmailChecker(String $request)
     {
         $emailquery = Person::where('email','=',$request)->first();
         if(!is_null($emailquery))
@@ -67,7 +80,7 @@ class PageController extends Controller
         }
         else
         {
-            return false;   
+            return false;
         }
     }
     //saves admin parameters
@@ -219,5 +232,184 @@ public function registerUser(Request $request)
               $newadmin->save();
               return redirect()->route('dashboard')->withErrors('An new User has just been added!'); 
 }
+
+public function saveKategori(Request $request)
+{
+        $keyword=$request->input('olduname');
+        $keyword2=$request->input('oldid');
+        $user_username=$request->input('nama');
+       if($keyword!=$user_username){
+             $unamecheck=$request->input('nama');
+             
+             $unamequery = Kategori::where('nama','=',$unamecheck)->first();
+            
+             if(!is_null($unamequery))
+             {   
+                 return redirect()->route('editkategori',array('nama'=>$keyword))->withErrors('An user with that username or email has already exists!');             
+            }
+            $olduser = Kategori::where('nama','=',$keyword)->first();
+            $olduser->delete();
+            $newuser = new Kategori;
+            $user_name=$request->input('nama');
+            $newuser->nama=$user_name;
+            $newuser->id_kategori=$keyword2;
+            $newuser->save();
+        }
+         else if($keyword==$user_username){
+             
+            
+            $olduser = Kategori::where('nama','=',$keyword)->first();
+            $user_name=$request->input('nama');
+            $olduser->nama=$user_name;
+            
+           
+            $olduser->save();
+        }
+        return redirect()->route('dashboard')->withErrors('An user profile has just been updated!');
+    }
+
+     public function editKategori($id)
+    {
+        
+             $result= Kategori::where('id_kategori','=',$id)->first();
+             return view('kategori.editkategori', compact('result'));
+         
+    }
+    public function createKategori()
+    {
+        return view('kategori.addkategori');
+    }
+    public function deletekategori($id)
+    {
+        $result= Kategori::where('id_kategori','=',$id)->first();
+        $result->delete();
+        return redirect()->route('dashboardkategori')->withErrors('An new user has just been deleted!');
+}
+
+public function searchKategori(Request $request)
+     {
+         $username=$request->get('keyword');
+         $kategories = Kategori::where('nama','like','%'.$username.'%')->get();
+         return view('kategori.listkategori', compact('kategories')); 
+     }
+    public function registerKategori(Request $request)
+    {
+            $newkategori = new Kategori;
+            $nama_kategori=$request->input('nama');
+            $newkategori->nama=$nama_kategori;
+            
+            
+            
+            
+           
+             $kategoricheck=$request->input('nama');
+             $unamequery = Kategori::where('nama','=',$kategoricheck)->first();
+             
+             if(!is_null($unamequery))
+             {   
+                 return redirect()->route('createkategori')->withErrors('An kategori with that name has already exists!');             
+             }
+              $newkategori->save();
+              return redirect()->route('dashboardkategori')->withErrors('An new kategoi has just been added!'); 
+    }
+    
+    public function saveProduct(Request $request)
+{
+        $keyword=$request->input('olduname');
+        $keyword2=$request->input('oldstock');
+        $keyword3=$request->input('oldid');
+        $user_username=$request->input('nama');
+       if($keyword!=$user_username){
+             $unamecheck=$request->input('nama');
+             
+             $unamequery = Kategori::where('nama','=',$unamecheck)->first();
+            
+             if(!is_null($unamequery))
+             {   
+                 return redirect()->route('editProduct',array('nama'=>$keyword))->withErrors('An product with that username or email has already exists!');             
+            }
+            $olduser = Product::where('nama','=',$keyword)->first();
+            $olduser->delete();
+            $newuser = new Product;
+            $user_name=$request->input('nama');
+            $harga_product=$request->input('harga');
+            $stock_product=$request->input('stock');
+            $kategori_product=$request->input('kategori');
+            $newuser->nama=$user_name;
+            $newuser->harga=$harga_product;
+            $newuser->stock=$stok_product;
+            $newuser->kategori=$kategori_product;
+            $newuser->product_id=$keyword3;
+
+            
+            $newuser->save();
+        }
+         else if($keyword==$user_username){
+             
+            
+            $olduser = Person::where('nama','=',$keyword)->first();
+            $user_name=$request->input('nama');
+            $olduser->nama=$user_name;
+            
+           
+            $olduser->save();
+        }
+        return redirect()->route('dashboardProduct')->withErrors('An user profile has just been updated!');
+    }
+
+     public function editProduct($id)
+    {
+        
+             $result= Product::where('product_id','=',$id)->first();
+             return view('product.editproduct', compact('result'));
+         
+    }
+    public function createProduct()
+    {
+        return view('product.addproduct');
+    }
+    public function deleteProduct($id)
+    {
+        $result= Product::where('product_id','=',$id)->first();
+        $result->delete();
+        return redirect()->route('dashboardProduct')->withErrors('An new product has just been deleted!');
+}
+
+public function searchProduct(Request $request)
+     {
+         $username=$request->get('keyword');
+         $products = Product::where('nama','like','%'.$username.'%')->get();
+         return view('product.listproduct', compact('products')); 
+     }
+    public function registerProduct(Request $request)
+    {
+            $newproduct = new Product;
+            $nama_product=$request->input('nama');
+            
+            $harga_product=$request->input('harga');
+            $kategori_product=$request->input('kategori');
+            //$stock_product=$request->input('stock');
+            $gambar_product=$request->input('foto');
+            
+            
+            $newproduct->nama=$nama_product;
+            $newproduct->harga=$harga_product;
+            $newproduct->id_kategori=$kategori_product;
+            //$newproduct->stock=$stock_product;
+            $newproduct->foto=$gambar_product;
+            
+            
+            
+           
+             $productcheck=$request->input('nama');
+             $unamequery = Product::where('nama','=',$productcheck)->first();
+             
+             if(!is_null($unamequery))
+             {   
+                 return redirect()->route('createproduct')->withErrors('An product with that name has already exists!');             
+             }
+              $newproduct->save();
+              return redirect()->route('dashboard')->withErrors('An new kategoi has just been added!'); 
+    }
 
 }

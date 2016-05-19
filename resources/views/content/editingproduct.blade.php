@@ -10,6 +10,7 @@
                                             </div>
                                             <input name="olduname" type="hidden" value="{{$result['nama']}}">
 											<input name="oldstock" type="hidden" value="{{$result['stock']}}">
+                                            <input name="oldid" type="hidden" value="{{$result['product_id']}}">
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username"> Kategori <span class="required">*</span>

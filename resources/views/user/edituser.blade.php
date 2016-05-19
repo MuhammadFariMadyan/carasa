@@ -69,7 +69,7 @@
                     <br />
 
                     <!-- sidebar menu -->
-                    @include('admin.sidemenu')
+                    @include('user.sidemenu')
                     <!-- /sidebar menu -->
 
                     <!-- /menu footer buttons -->
@@ -80,7 +80,7 @@
             <!-- top navigation -->
             <div class="top_nav">
 
-              @include('admin.navmenu')
+              @include('user.navmenu')
 
             </div>
             <!-- /top navigation -->
@@ -91,7 +91,7 @@
                     <div class="page-title">
                         <div class="title_left">
                             <h3>
-                   Edit Admin
+                   Edit User
                     <!-- <small>
                         Some examples to get you started
                     </small> -->
@@ -105,7 +105,7 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
-                            @include('content.editingadmin')
+                            @include('content.editinguser')
                             </div>
                         </div>
 
