@@ -13,7 +13,7 @@ use App\Http\Controllers\PageController;
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->intended('/login');
 });
 
 Route::get('/login', [
@@ -43,11 +43,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::group(['middleware' => 'auth'], function()
 {
-    Route::get('/dashboard', [
-		'as'=>'dashboard',
-		'uses'=>'PageController@getDashboard'
-	]);
-
+    
     Route::get('/product', [
 		'as'=>'product',
 		'uses'=>'ProductController@index'
@@ -76,6 +72,11 @@ Route::group(['middleware' => 'auth'], function()
 	Route::group(['middleware' => 'admin'], function()
  	{
  
+		Route::get('/dashboard', [
+			'as'=>'dashboard',
+			'uses'=>'PageController@getDashboard'
+		]);
+
 	 	Route::get('/editadmin/{id}', array('as'=>'editadmin',
 	 		function($id){
 			$num = new PageController();
@@ -132,29 +133,33 @@ Route::group(['middleware' => 'auth'], function()
 	 		]);
 
 	 		Route::post('/savekategori/', [
-	 		'as'=>'saveakategori',
-	 		'uses'=>'PageController@saveKategori'
+	 			'as'=>'saveakategori',
+	 			'uses'=>'PageController@saveKategori'
 	 		]);
+
 	 		Route::post('/registerkategori/', [
-	 		'as'=>'registerkategori',
-	 		'uses'=>'PageController@registerKategori'
+	 			'as'=>'registerkategori',
+	 			'uses'=>'PageController@registerKategori'
 	 		]);
+	 		
 	 		Route::post('/searchkategori/', [
-	 		'as'=>'searchkategori',
-	 		'uses'=>'PageController@searchKategori'
+	 			'as'=>'searchkategori',
+	 			'uses'=>'PageController@searchKategori'
 	 		]);
 			
 			Route::post('/saveproduct/', [
-	 		'as'=>'saveproduct',
-	 		'uses'=>'PageController@saveProduct'
+	 			'as'=>'saveproduct',
+	 			'uses'=>'PageController@saveProduct'
 	 		]);
+
 	 		Route::post('/registerproduct/', [
-	 		'as'=>'registerproduct',
-	 		'uses'=>'PageController@registerProduct'
+	 			'as'=>'registerproduct',
+	 			'uses'=>'PageController@registerProduct'
 	 		]);
+
 	 		Route::post('/searchproduct/', [
-	 		'as'=>'searchproduct',
-	 		'uses'=>'PageController@searchProduct'
+	 			'as'=>'searchproduct',
+	 			'uses'=>'PageController@searchProduct'
 	 		]);
 		});
 		
@@ -169,23 +174,23 @@ Route::group(['middleware' => 'auth'], function()
 		]);
 
 		Route::get('/createkategori', [
-		'as'=>'createkategori',
-		'uses'=>'PageController@createKategori'
+			'as'=>'createkategori',
+			'uses'=>'PageController@createKategori'
 		]);
 		
 		Route::get('/deletekategori/{id}', [
-		'as'=>'deletekategori',
-		'uses'=>'PageController@deleteKategori'
+			'as'=>'deletekategori',
+			'uses'=>'PageController@deleteKategori'
 		]);
 		
 		Route::get('/createproduct', [
-		'as'=>'createproduct',
-		'uses'=>'PageController@createProduct'
+			'as'=>'createproduct',
+			'uses'=>'PageController@createProduct'
 		]);
 		
 		Route::get('/deleteproduct/{id}', [
-		'as'=>'deleteproduct',
-		'uses'=>'PageController@deleteProduct'
+			'as'=>'deleteproduct',
+			'uses'=>'PageController@deleteProduct'
 		]);
 
 		Route::get('/dashboarduser', [
@@ -194,13 +199,13 @@ Route::group(['middleware' => 'auth'], function()
 		]);
 
 		Route::get('/dashboardkategori', [
-		'as'=>'dashboardkategori',
-		'uses'=>'PageController@getDashboard2'
+			'as'=>'dashboardkategori',
+			'uses'=>'PageController@getDashboard2'
 		]);
 		
 		Route::get('/dashboardproduct', [
-		'as'=>'dashboardproduct',
-		'uses'=>'PageController@getDashboard3'
+			'as'=>'dashboardproduct',
+			'uses'=>'PageController@getDashboard3'
 		]);
 
 		
@@ -246,8 +251,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
  
  Route::post ('apicarasa/login/', 'ApiController@login');
  
- Route::get('apicarasa/product', 
- 	[
+ Route::get('apicarasa/product', [
  		'as'=>'apiretrieveproduct',
  		'uses'=>'ApiController@retrieveProduct'
  ]);

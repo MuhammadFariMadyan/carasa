@@ -38,7 +38,7 @@
 
 
 <body class="nav-md">
-     @if($errors->any())
+    @if($errors->any())
                 <div class="alert alert-danger" id="alert"><span class="glyphicon glyphicon-remove-sign">{{$errors->first()}}</span><span class ="glyphicon glyphicon-remove pull-right" id="closebutton"></span></div>
     @endif
     <div class="container body">
@@ -69,7 +69,7 @@
                     <br />
 
                     <!-- sidebar menu -->
-                    @include('Product.sidemenu')
+                    @include('product.sidemenu')
                     <!-- /sidebar menu -->
 
                     <!-- /menu footer buttons -->
