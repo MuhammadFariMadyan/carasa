@@ -17,13 +17,6 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="email" class="control-label col-md-3 col-sm-3 col-xs-12">Stock</label>
-                                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="stock" class="form-control col-md-7 col-xs-12" type="text" name="stock">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="foto">Harga <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
