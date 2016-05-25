@@ -25,7 +25,7 @@ class PasswordController extends Controller
      *
      * @return void
      */
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = '/';
     
     public function __construct()
     {

@@ -33,7 +33,7 @@
 
 <div class="navbar-fixed">
   <nav class="teal lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#!" class="brand-logo"><img class="responsive-img" src="../img/carasaSmall.png"></a>
+    <div class="nav-wrapper container"><a id="logo-container" href="{{route('product')}}" class="brand-logo"><img class="responsive-img" src="../img/carasaSmall.png"></a>
       <ul class="right hide-on-med-and-down">
         <!-- Dropdown Trigger -->
         <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Choose Category<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -117,7 +117,7 @@
   <br/>
   <br/>
 
-                                <form action="{{URL::to('/searchproduct/')}}" method = "POST">
+                                <form action="{{URL::to('/search/')}}" method = "POST">
                                   {!! csrf_field() !!}
                                     <input type="text" class="form-control" name="keyword" placeholder="Search Product">
                                     <span class="input-group-btn">

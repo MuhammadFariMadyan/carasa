@@ -64,8 +64,8 @@ Route::group(['middleware' => 'auth'], function()
 		'uses'=>'ProductController@sort'
 	]);
 
-	Route::post('/searchproduct', [
-		'as'=>'searchproduct',
+	Route::post('/search', [
+		'as'=>'search',
 		'uses'=>'ProductController@search'
 	]);
 

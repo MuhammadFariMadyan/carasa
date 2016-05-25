@@ -2,9 +2,6 @@
                                     <table class="table table-striped responsive-utilities jambo_table">
                                         <thead>
                                             <tr class="headings">
-                                                <th>
-                                                    <input type="checkbox" class="tableflat">
-                                                </th>
                                                 <th>Nama </th>
                                                 <th>User Name </th>
                                                 <th>Email </th>
@@ -18,9 +15,6 @@
                                         <tbody>
                                             @foreach($admins as $admin)
                                             <tr class="even pointer">
-                                                <td class="a-center ">
-                                                    <input type="checkbox" class="tableflat">
-                                                </td>
                                                 <td>{{$admin->nama}}</td>
                                                 <td>{{$admin->username}}</td>
                                                 <td>{{$admin->email}}</i>

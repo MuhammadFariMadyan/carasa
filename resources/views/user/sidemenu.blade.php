@@ -1,7 +1,8 @@
          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                         <div class="menu_section">
-                            <h3>Transaksi</h3>
+                            &nbsp
+                            &nbsp
                             <ul class="nav side-menu">
                                 <li><a href="a_order.html"><i class="fa fa-shopping-cart"></i> Order <!-- <span class="fa fa-chevron-down"></span> --></a>
                                     <!-- <ul class="nav child_menu" style="display: none">

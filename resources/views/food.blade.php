@@ -117,7 +117,7 @@
   <br/>
   <br/>
 
-                                <form action="{{URL::to('/searchproduct/')}}" method = "POST">
+                                <form action="{{URL::to('/search/')}}" method = "POST">
                                   {!! csrf_field() !!}
                                     <input type="text" class="form-control" name="keyword" placeholder="Search Product">
                                     <span class="input-group-btn">

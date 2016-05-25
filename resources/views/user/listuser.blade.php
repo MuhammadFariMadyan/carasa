@@ -50,14 +50,14 @@
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-hospital-o"></i> <span>CARASA</span></a>
+                        <a href="{{route('dashboard')}}" class="site_title"><span>CARASA</span></a>
                     </div>
                     <div class="clearfix"></div>
 
                     <!-- menu prile quick info -->
                     <div class="profile">
                         <div class="profile_pic">
-                            <img src="{{asset('images/img.jpg')}}" alt="..." class="img-circle profile_img">
+                            <img src="{{asset('img/carasaIcon.png')}}" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Welcome, {{Auth::user()->username}}</span>
@@ -121,7 +121,7 @@
                                 <div class="x_title">
                                     <!-- <h2>Daily active users <small>Sessions</small></h2> -->
                                     <ul class="nav navbar-right panel_toolbox">
-                                        <li><a href="#"><i class="fa fa-chevron-up"></i></a>
+                                        <!-- <li><a href="#"><i class="fa fa-chevron-up"></i></a>
                                         </li>
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
@@ -131,7 +131,7 @@
                                                 <li><a href="#">Settings 2</a>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> -->
                                         <li><a href="{{route('createuser')}}"><i class="fa fa-plus"></i></a>
                                         </li>
                                     </ul>
