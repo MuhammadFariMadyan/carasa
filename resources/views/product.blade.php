@@ -21,7 +21,7 @@
     <li><a href="#!">Order List<i class="fa fa-list-ol right"></i></a></li>
     <li >
       <!-- Modal Trigger -->
-      <a class="modal-trigger" href="#modal1">Change Password<i class="fa fa-gear right"></i></a>
+      <a class="modal-trigger" href="#modal0">Change Password<i class="fa fa-gear right"></i></a>
     </li>
     <li><a href="{{route('logout')}}">Logout<i class="fa fa-sign-out right"></i></a></li>
   </ul>
@@ -80,7 +80,7 @@
         <li><a href="#!">Order List<i class="fa fa-list-ol right"></i></a></li>
         <li >
           <!-- Modal Trigger -->
-          <a class="modal-trigger" href="#modal1">Change Password<i class="fa fa-gear right"></i></a>
+          <a class="modal-trigger" href="#modal0">Change Password<i class="fa fa-gear right"></i></a>
         </li>
         <li><a href="{{route('logout')}}">Logout<i class="fa fa-sign-out right"></i></a></li>
       </ul>
@@ -90,7 +90,7 @@
 </div>
 
   <!-- Modal Reset Password Structure -->
-  <div id="modal1" class="modal">
+  <div id="modal0" class="modal">
     <div class="modal-content">
       <h4 class="red-text">Change Password</h4>
       <br>
@@ -263,8 +263,8 @@
      $(document).ready(function(){
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
       $('.modal-trigger').leanModal();
-      $('#modal1').openModal();
-      $('#modal1').closeModal();
+      // $('#modal0').openModal();
+      // $('#modal0').closeModal();
   });
   </script>
 </body>

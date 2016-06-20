@@ -50,14 +50,14 @@
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-hospital-o"></i> <span>CARASA</span></a>
+                        <a href="{{route('dashboard')}}" class="site_title"><span>CARASA</span></a>
                     </div>
                     <div class="clearfix"></div>
 
                     <!-- menu prile quick info -->
                     <div class="profile">
                         <div class="profile_pic">
-                            <img src="{{asset('images/img.jpg')}}" alt="..." class="img-circle profile_img">
+                            <img src="{{asset('img/carasaIcon.png')}}" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Welcome, {{Auth::user()->username}}</span>

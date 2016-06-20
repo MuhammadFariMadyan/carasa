@@ -34,13 +34,6 @@ Route::get('/logout', [
 	'uses'=>'Auth\AuthController@getLogout'
 ]);
 
-Route::get('password/email', 'Auth\PasswordController@getEmail');
-Route::post('password/email', 'Auth\PasswordController@postEmail');
-
-// Password reset routes...
-Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
-Route::post('password/reset', 'Auth\PasswordController@postReset');
-
 Route::group(['middleware' => 'auth'], function()
 {
     
@@ -251,7 +244,8 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
  
  Route::post ('apicarasa/login/', 'ApiController@login');
  
- Route::get('apicarasa/product', [
+ Route::get('apicarasa/product', 
+ [
  		'as'=>'apiretrieveproduct',
  		'uses'=>'ApiController@retrieveProduct'
  ]);

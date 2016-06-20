@@ -21,7 +21,7 @@
     <li><a href="#!">Order List<i class="fa fa-list-ol right"></i></a></li>
     <li >
       <!-- Modal Trigger -->
-      <a class="modal-trigger" href="#modal1">Change Password<i class="fa fa-gear right"></i></a>
+      <a class="modal-trigger" href="#modal0">Change Password<i class="fa fa-gear right"></i></a>
     </li>
     <li><a href="{{route('logout')}}">Logout<i class="fa fa-sign-out right"></i></a></li>
   </ul>
@@ -70,7 +70,7 @@
         <li><a href="#!">Order List<i class="fa fa-list-ol right"></i></a></li>
         <li >
           <!-- Modal Trigger -->
-          <a class="modal-trigger" href="#modal1">Change Password<i class="fa fa-gear right"></i></a>
+          <a class="modal-trigger" href="#modal0">Change Password<i class="fa fa-gear right"></i></a>
         </li>
         <li><a href="{{route('logout')}}">Logout<i class="fa fa-sign-out right"></i></a></li>
       </ul>
@@ -117,12 +117,12 @@
   <br/>
   <br/>
 
-                                <form action="{{URL::to('/search/')}}" method = "POST">
-                                  {!! csrf_field() !!}
-                                    <input type="text" class="form-control" name="keyword" placeholder="Search Product">
-                                    <span class="input-group-btn">
-                                     <button class="btn btn-default" type="Submit">Search Product</button>
-                                 </form>
+  <form action="{{URL::to('/search/')}}" method = "POST">
+            {!! csrf_field() !!}
+     <input type="text" class="form-control" name="keyword" placeholder="Search Product">
+     <span class="input-group-btn">
+      <button class="btn btn-default" type="Submit">Search Product</button>
+  </form>
 
 
   <form action="{{route('sortproduct')}}" method="POST">
@@ -201,18 +201,6 @@
     </div>
 
 
-    <!-- <div class="right">
-      <ul class="pagination">
-        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-        <li class="active"><a href="#!">1</a></li>
-        <li class="waves-effect"><a href="#!">2</a></li>
-        <li class="waves-effect"><a href="#!">3</a></li>
-        <li class="waves-effect"><a href="#!">4</a></li>
-        <li class="waves-effect"><a href="#!">5</a></li>
-        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-      </ul>
-    </div> -->
-
     <div class="right">    
       {!! $drink->render() !!}
     </div>
@@ -258,8 +246,8 @@
      $(document).ready(function(){
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
       $('.modal-trigger').leanModal();
-      $('#modal1').openModal();
-      $('#modal1').closeModal();
+      // $('#modal1').openModal();
+      // $('#modal1').closeModal();
   });
   </script>
 </body>
