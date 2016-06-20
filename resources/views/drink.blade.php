@@ -80,7 +80,7 @@
 </div>
 
   <!-- Modal Reset Password Structure -->
-  <div id="modal1" class="modal">
+  <div id="modal0" class="modal">
     <div class="modal-content">
       <h4 class="red-text">Change Password</h4>
       <br>
